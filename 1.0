@@ -1,0 +1,303 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace calculator_wpf
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        long[] numbers = new long[2] { 0, 0 };
+        string operation = "";
+
+
+        // factorial method 
+        private long Factorial(int num)
+        {
+           
+                long result = 1;
+                for (int x = 1; x <= num; x = x + 1)
+                    result *= x;
+                return result;
+        }
+            
+        
+      
+
+
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private void Btn1_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (operation == "")
+            {
+                numbers[0] = (numbers[0] * 10) + 1;
+                txtDisplay.Text = numbers[0].ToString();
+            }
+            else
+            {
+                numbers[1] = (numbers[1] * 10)  +1;
+                txtDisplay.Text = numbers[1].ToString();
+            }
+
+        }
+
+        private void Btn2_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (operation == "")
+            {
+                numbers[0] = (numbers[0] * 10) + 2;
+                txtDisplay.Text = numbers[0].ToString();
+            }
+            else
+            {
+                numbers[1] = (numbers[1] * 10) + 2;
+                txtDisplay.Text = numbers[1].ToString();
+            }
+        }
+
+        private void Btn3_Click(object sender, RoutedEventArgs e)
+        {
+            if (operation == "")
+            {
+                numbers[0] = (numbers[0] * 10) + 3;
+                txtDisplay.Text = numbers[0].ToString();
+            }
+            else
+            {
+                numbers[1] = (numbers[1] * 10) + 3;
+                txtDisplay.Text = numbers[1].ToString();
+            }
+        }
+
+        private void Btn4_Click(object sender, RoutedEventArgs e)
+        {
+            if (operation == "")
+            {
+                numbers[0] = (numbers[0] * 10) + 4;
+                txtDisplay.Text = numbers[0].ToString();
+            }
+            else
+            {
+                numbers[1] = (numbers[1] * 10) + 4;
+                txtDisplay.Text = numbers[1].ToString();
+            }
+        }
+
+        private void Btn5_Click(object sender, RoutedEventArgs e)
+        {
+            if (operation == "")
+            {
+                numbers[0] = (numbers[0] * 10) + 5;
+                txtDisplay.Text = numbers[0].ToString();
+            }
+            else
+            {
+                numbers[1] = (numbers[1] * 10) + 5;
+                txtDisplay.Text = numbers[1].ToString();
+            }
+        }
+
+        private void Btn6_Click(object sender, RoutedEventArgs e)
+        {
+            if (operation == "")
+            {
+                numbers[0] = (numbers[0] * 10) + 6;
+                txtDisplay.Text = numbers[0].ToString();
+            }
+            else
+            {
+                numbers[1] = (numbers[1] * 10) + 6;
+                txtDisplay.Text = numbers[1].ToString();
+            }
+        }
+
+        private void Btn7_Click(object sender, RoutedEventArgs e)
+        {
+            if (operation == "")
+            {
+                numbers[0] = (numbers[0] * 10) + 7;
+                txtDisplay.Text = numbers[0].ToString();
+            }
+            else
+            {
+                numbers[1] = (numbers[1] * 10) + 7;
+                txtDisplay.Text = numbers[1].ToString();
+            }
+        }
+
+        private void Btn8_Click(object sender, RoutedEventArgs e)
+        {
+            if (operation == "")
+            {
+                numbers[0] = (numbers[0] * 10) + 8;
+                txtDisplay.Text = numbers[0].ToString();
+            }
+            else
+            {
+                numbers[1] = (numbers[1] * 10) + 8;
+                txtDisplay.Text = numbers[1].ToString();
+            }
+        }
+
+        private void Btn9_Click(object sender, RoutedEventArgs e)
+        {
+            if (operation == "")
+            {
+                numbers[0] = (numbers[0] * 10) + 9;
+                txtDisplay.Text = numbers[0].ToString();
+            }
+            else
+            {
+                numbers[1] = (numbers[1] * 10) + 9;
+                txtDisplay.Text = numbers[1].ToString();
+            }
+        }
+
+        private void Btn0_Click(object sender, RoutedEventArgs e)
+        {
+            if (operation == "")
+            {
+                numbers[0] = (numbers[0] * 10);
+                txtDisplay.Text = numbers[0].ToString();
+            }
+            else
+            {
+                numbers[1] = (numbers[1] * 10);
+                txtDisplay.Text = numbers[1].ToString();
+            }
+        }
+
+        private void Btnplus_Click(object sender, RoutedEventArgs e)
+        {
+            operation = "+";
+            txtDisplay.Text = "0";
+
+        }
+
+        private void Btnminus_Click(object sender, RoutedEventArgs e)
+        {
+            operation = "-";
+            txtDisplay.Text = "0";
+        }
+
+        private void Btndivide_Click(object sender, RoutedEventArgs e)
+        {
+            operation = "/";
+            txtDisplay.Text = "0";
+        }
+
+        private void Btnmultiply_Click(object sender, RoutedEventArgs e)
+        {
+            operation = "*";
+            txtDisplay.Text = "0";
+        }
+
+        private void Btnequals_Click(object sender, RoutedEventArgs e)
+        {
+
+            switch (operation)
+            {
+                case "+":
+                    txtDisplay.Text = (numbers[0] + numbers[1]).ToString();
+                    break;
+                case "-":
+                    txtDisplay.Text = (numbers[0] - numbers[1]).ToString();
+                    break;
+                case "*":
+                    txtDisplay.Text = (numbers[0] * numbers[1]).ToString();
+                    break;
+                case "/":
+                    txtDisplay.Text = (numbers[0] / numbers[1]).ToString();
+                    break;
+
+            }
+        }
+
+        private void BtnCE_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (operation == "")
+            {
+                numbers[0] = 0;
+                txtDisplay.Text = "0";
+            }
+            else
+            {
+                numbers[1] = 0;
+            }
+            txtDisplay.Text = "0";
+        }
+
+        private void BtnC_Click(object sender, RoutedEventArgs e)
+        {
+            numbers[0] = 0;
+            numbers[1] = 0;
+            operation = "";
+            txtDisplay.Text = "0";
+        }
+
+        private void Btnbckspc_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (operation == "")
+            {
+                numbers[0] = (numbers[0] / 10);
+                txtDisplay.Text = numbers[0].ToString();
+            }
+            else
+            {
+                numbers[1] = (numbers[1] / 10);
+                txtDisplay.Text = numbers[1].ToString();
+            }
+
+        }
+
+        private void Btnposneg_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (operation == "")
+            {
+                numbers[0] *= -1;
+                txtDisplay.Text = numbers[0].ToString();
+            }
+            else
+            {
+                numbers[1] *= -1;
+                txtDisplay.Text = numbers[1].ToString();
+            }
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (int.Parse( txtDisplay.Text) < 15)
+            {
+                txtDisplay.Text = Factorial(int.Parse(txtDisplay.Text)).ToString();
+            }
+            else
+            {
+                txtDisplay.Text = ("no.");
+            }
+
+
+        }
+    }
+}
